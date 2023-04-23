@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/engine.io-client-1.0.2.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/source/engine.io-client-1.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGo/javadoc/engine.io-client-1.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/json-20220924.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/miglayout-4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/mysql-connector-j-8.0.31.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/source/mysql-connector-j-8.0.31-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGo/javadoc/mysql-connector-j-8.0.31-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/socket.io-client-1.0.2.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/source/socket.io-client-1.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGo/javadoc/socket.io-client-1.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/okhttp-3.12.12.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/source/okhttp-3.12.12-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGo/javadoc/okhttp-3.12.12-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/okio-1.15.0.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/source/okio-1.15.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGo/javadoc/okio-1.15.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/lib/gson-2.10.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGo/source/gson-2.10-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGo/javadoc/gson-2.10-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
