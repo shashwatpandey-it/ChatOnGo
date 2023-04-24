@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
 import com.shashwat.components.ChatBody;
@@ -91,6 +92,21 @@ public class ClientService {
 				}
 			});
 			
+			client.on("updateUsersList", new Emitter.Listener() {
+				
+				@Override
+				public void call(Object... args) {
+					// TODO Auto-generated method stub
+					if(args.length > 0) {
+						for(Object object : args) {
+							UserAccountModel userAccount = new Gson().fromJson(object.toString(), UserAccountModel.class);
+							users.removeIf(user -> user.getName().equals(userAccount.getName()));
+						}
+						LeftPanel.getLeftPanelInstance().newUsers(users);
+					}
+				}
+			});
+			
 			client.on("recieveFromUser", new Emitter.Listener() {
 				
 				@Override
@@ -98,7 +114,7 @@ public class ClientService {
 					if(args.length > 0) {
 						for(Object object : args) {
 							RecieveMessageModel message = new Gson().fromJson(object.toString(), RecieveMessageModel.class);
-							ChatBody.getChatBodyInstance().addLeftChatItem(message);
+							ChatService.getChatService().receiveMessage(message.getFromUserId(), message);
 						}
 					}
 					

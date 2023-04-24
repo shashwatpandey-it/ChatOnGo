@@ -1,6 +1,6 @@
 package com.shashwat.models;
 
-public class RecieveMessageModel {
+public class RecieveMessageModel implements ChatModel {
 	
 	private int fromUserId;
 	private String textMessage;

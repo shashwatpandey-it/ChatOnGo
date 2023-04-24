@@ -68,4 +68,10 @@ public class ChatBody extends JPanel{
 		this.repaint();
 		this.revalidate();
 	}
+	
+	public void clearChat() {
+		this.removeAll();
+		this.repaint();
+		this.revalidate();
+	}
 }

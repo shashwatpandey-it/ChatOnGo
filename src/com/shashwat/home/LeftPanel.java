@@ -54,9 +54,9 @@ public class LeftPanel extends JPanel {
 	}
 	
 	public void newUsers(List<UserAccountModel> list) {
+		users.clear();
 		for(UserAccountModel userAccount : list) {
 			users.add(userAccount);
-			
 		}
 		this.showChatList();
 	}

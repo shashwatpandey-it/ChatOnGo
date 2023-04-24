@@ -15,6 +15,7 @@ import javax.swing.JTextPane;
 import com.google.gson.Gson;
 import com.shashwat.models.SendMessageModel;
 import com.shashwat.models.UserAccountModel;
+import com.shashwat.services.ChatService;
 import com.shashwat.services.ClientService;
 
 import io.socket.client.Ack;
@@ -95,8 +96,7 @@ public class ChatTypeBox extends JPanel implements ActionListener{
 			if(!txtString.equals("")) {
 				//add chat item to right
 				SendMessageModel message = new SendMessageModel(userId, userAccount.getUserId(), txtString);
-				send(message);
-				chatBody.addRightChatItem(message);
+				ChatService.getChatService().sendMessage(message.getToUserId(), message);
 				inputArea.setText("");
 				inputArea.grabFocus();
 				refresh();
@@ -106,14 +106,4 @@ public class ChatTypeBox extends JPanel implements ActionListener{
 			}
 	}
 	
-	private void send(SendMessageModel message) {
-		System.out.println(new Gson().toJson(message, SendMessageModel.class));
-		ClientService.getClientService().getClient().emit("sendToUser", message.toJsonObject(), new Ack() {
-			
-			@Override
-			public void call(Object... args) {
-				
-			}
-		});
-	}
 }

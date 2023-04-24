@@ -1,7 +1,7 @@
 package com.shashwat.models;
 import org.json.JSONObject;
 
-public class SendMessageModel {
+public class SendMessageModel implements ChatModel {
 
 	private int fromUserID;
 	private int toUserId;

@@ -13,6 +13,7 @@ import com.shashwat.components.ChatTitle;
 import com.shashwat.components.ChatTypeBox;
 import com.shashwat.components.MyScrollBar;
 import com.shashwat.models.UserAccountModel;
+import com.shashwat.services.ChatService;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -80,6 +81,7 @@ public class ChatPanel extends JPanel {
 	
 	public void setCurrentPerson(UserAccountModel userAccount) {
 		chatTitle.setCuurentPerson(userAccount.getName());
+		ChatService.getChatService().switchConversation(userAccount.getUserId());
 		chatTypeBox.setCurrentPerson(userAccount);
 	}
 
