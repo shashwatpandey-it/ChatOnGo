@@ -11,9 +11,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextPane;
-import javax.swing.border.Border;
-
-import net.miginfocom.swing.MigLayout;
 
 public class ChatItem extends JLayeredPane{
 	

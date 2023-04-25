@@ -3,13 +3,9 @@ import java.net.URISyntaxException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
 import com.google.gson.Gson;
-import com.shashwat.components.ChatBody;
 import com.shashwat.home.LeftPanel;
 import com.shashwat.models.RecieveMessageModel;
 import com.shashwat.models.UserAccountModel;
@@ -17,7 +13,6 @@ import com.shashwat.models.UserAccountModel;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
-import okhttp3.ConnectionSpec;
 import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
 
@@ -147,8 +142,3 @@ public class ClientService {
 	}
 }
 
-/* 							------NOTE------
- * The nature of Socket IO is that the sockets timeout (or in this case, DISCONNECTS) if there are no activities present in the socket. 
- * the efficient way is to use an HTTP API library to make calls to your server instead of socket.io,
- * using something like Retrofit, volley, or okHTTP. 
-*/

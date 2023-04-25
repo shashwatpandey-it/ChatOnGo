@@ -6,6 +6,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 
+import com.shashwat.models.ChatModel;
+
 
 public class ChatDate extends JLayeredPane {
 	//reference variables

@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.time.Clock;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -16,13 +15,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
-import com.google.gson.Gson;
 import com.shashwat.models.SendMessageModel;
 import com.shashwat.models.UserAccountModel;
 import com.shashwat.services.ChatService;
-import com.shashwat.services.ClientService;
-
-import io.socket.client.Ack;
 import net.miginfocom.swing.MigLayout;
 
 public class ChatTypeBox extends JPanel implements ActionListener{

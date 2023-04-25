@@ -1,10 +1,7 @@
 package com.shashwat.components;
 /* code taken from Internet */
 
-
-import javax.swing.*;
 import javax.swing.text.*;
-import java.awt.*;
 
 	class WrapEditorKit extends StyledEditorKit {
 
