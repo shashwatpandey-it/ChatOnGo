@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.nio.channels.NonWritableChannelException;
+import java.time.LocalTime;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -52,13 +53,13 @@ public class ChatBody extends JPanel{
 	}
 	
 	public void addLeftChatItem(RecieveMessageModel data) {
-		this.add(new LeftChatView(data.getTextMessage()), "wrap, w ::70%");	
+		this.add(new LeftChatView(data.getTextMessage(), data.getTime()), "wrap, w ::70%");	
 		this.repaint();
 		this.revalidate();
 	}
 	
 	public void addRightChatItem(SendMessageModel data) {
-		this.add(new RightChatView(data.getTextMessage()), "wrap, align right, w ::70%");	
+		this.add(new RightChatView(data.getTextMessage(), data.getTime()), "wrap, align right, w ::70%");	
 		this.repaint();
 		this.revalidate();
 	}

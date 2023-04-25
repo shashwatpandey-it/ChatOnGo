@@ -1,5 +1,7 @@
 package com.shashwat.services;
 import java.net.URISyntaxException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -114,6 +116,7 @@ public class ClientService {
 					if(args.length > 0) {
 						for(Object object : args) {
 							RecieveMessageModel message = new Gson().fromJson(object.toString(), RecieveMessageModel.class);
+							message.setTime(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
 							ChatService.getChatService().receiveMessage(message.getFromUserId(), message);
 						}
 					}

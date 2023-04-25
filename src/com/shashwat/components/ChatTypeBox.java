@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.time.Clock;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -96,6 +100,7 @@ public class ChatTypeBox extends JPanel implements ActionListener{
 			if(!txtString.equals("")) {
 				//add chat item to right
 				SendMessageModel message = new SendMessageModel(userId, userAccount.getUserId(), txtString);
+				message.setTime(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
 				ChatService.getChatService().sendMessage(message.getToUserId(), message);
 				inputArea.setText("");
 				inputArea.grabFocus();

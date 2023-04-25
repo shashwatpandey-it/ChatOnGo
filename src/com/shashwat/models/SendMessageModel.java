@@ -1,4 +1,5 @@
 package com.shashwat.models;
+
 import org.json.JSONObject;
 
 public class SendMessageModel implements ChatModel {
@@ -6,6 +7,7 @@ public class SendMessageModel implements ChatModel {
 	private int fromUserID;
 	private int toUserId;
 	private String textMessage;
+	private String time;
 	
 	public int getFromUserID() {
 		return fromUserID;
@@ -51,6 +53,13 @@ public class SendMessageModel implements ChatModel {
 		catch (Exception e) {
 			return null;
 		}
+	}
+	
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 }

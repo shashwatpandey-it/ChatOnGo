@@ -1,6 +1,7 @@
 package com.shashwat.components;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.time.LocalTime;
 
 import javax.swing.JLayeredPane;
 
@@ -8,12 +9,14 @@ public class RightChatView extends JLayeredPane{
 	
 	//reference variables
 	private String txt;
+	private String time;
 	private Color bgColor;
 	private Color fgColor;
 		
 	//constructor
-	public RightChatView(String txt) {
+	public RightChatView(String txt, String time) {
 		this.txt = txt;
+		this.time = time;
 		super.setLayout(new BorderLayout());
 		super.setOpaque(false);
 			
@@ -23,7 +26,9 @@ public class RightChatView extends JLayeredPane{
 	private void init() {
 		bgColor = new Color(220, 200, 255);
 		fgColor = Color.BLACK;
-		this.add(new ChatItem(txt, bgColor, fgColor, "10:35 PM"), BorderLayout.CENTER);
+		
+		String timeString = time.toString();
+		this.add(new ChatItem(txt, bgColor, fgColor, timeString), BorderLayout.CENTER);
 	}
 
 }

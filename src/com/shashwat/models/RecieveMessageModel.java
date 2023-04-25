@@ -4,6 +4,7 @@ public class RecieveMessageModel implements ChatModel {
 	
 	private int fromUserId;
 	private String textMessage;
+	private String time;
 	
 	public int getFromUserId() {
 		return fromUserId;
@@ -28,6 +29,14 @@ public class RecieveMessageModel implements ChatModel {
 	public RecieveMessageModel(int from, String textMessage) {
 		this.fromUserId = from;
 		this.textMessage = textMessage;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 }
