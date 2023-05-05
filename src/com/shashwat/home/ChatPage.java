@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.time.LocalTime;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
@@ -17,11 +19,15 @@ public class ChatPage extends JFrame{
 	//reference variables
 	private JLayeredPane mainPane;
 	private int userId;
+	private String userName;
 	private ChatPanel chatPanel;
+	private String loginTime;
 	
 	//constructor
-	public ChatPage(int userId){
+	public ChatPage(int userId, String userName, String loginTime){
 		this.userId = userId;
+		this.userName = userName;
+		this.loginTime = loginTime;
 		super.setTitle("ChatOnGo");
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		super.setIconImage(new ImageIcon("resources/icon.png").getImage());
@@ -58,7 +64,7 @@ public class ChatPage extends JFrame{
 		mainPane.setOpaque(false);
 		mainPane.add(new LeftPanel(userId));
 		mainPane.add(chatPanel);
-		mainPane.add(new RightPanel());
+		mainPane.add(new RightPanel(userName, loginTime));
 		
 		
 		this.getContentPane().add(mainPane, BorderLayout.CENTER);

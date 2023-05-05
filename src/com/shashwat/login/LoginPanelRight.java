@@ -4,6 +4,9 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -44,7 +47,7 @@ public class LoginPanelRight extends JPanel{
 		headingFont = new Font("Rockwell", Font.BOLD, 36);
 		labelFont = new Font("Monospaced", Font.PLAIN, 18);
 		fieldFont = new Font("Monospaced", Font.BOLD, 20);
-		buttonFont = new Font("helvetica ", Font.BOLD, 24);
+		buttonFont = new Font("helvetica", Font.BOLD, 24);
 		greenColor = new Color(15,240,50);
 		blurBlue = new Color(205,230,250);
 		
@@ -127,11 +130,11 @@ public class LoginPanelRight extends JPanel{
 		this.add(messageLabel);
 	}
 	
-	private void proceedLogin(int userId) {
+	private void proceedLogin(int userId, String userName, String loginTime) {
 		reference.dispose();
 		try {
 			Thread.sleep(200);
-			new ChatPage(userId);
+			new ChatPage(userId, userName, loginTime);
 		}
 		catch (InterruptedException ex) {
 			// TODO: handle exception
@@ -169,7 +172,7 @@ public class LoginPanelRight extends JPanel{
 							
 							if(statusModel.isStatus()) {
 								ClientService.getClientService().setUserId(statusModel.getUserId());
-								proceedLogin(statusModel.getUserId());
+								proceedLogin(statusModel.getUserId(),statusModel.getUserName(),LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
 							}
 							else if(statusModel.getMessage().equals("Invalid")) {
 								messageLabel.setText("Invalid user credentials");
