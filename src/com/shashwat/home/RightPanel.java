@@ -51,7 +51,7 @@ class RightPanel extends JPanel {
 		
 		// handling avatar label
 		avatarLabel = new JLabel();
-		avatarLabel.setIcon(new ImageIcon("resources/login-user.png"));
+		avatarLabel.setIcon(new ImageIcon(getClass().getResource("/login-user.png")));
 		avatarLabel.setHorizontalAlignment(JLabel.CENTER);
 		avatarLabel.setVerticalAlignment(JLabel.CENTER);
 				

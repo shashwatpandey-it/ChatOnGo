@@ -164,7 +164,7 @@ public class RegisterPanelRight extends JPanel implements ActionListener{
 				public void call(Object... objects){
 					if (objects.length>0) {
 						RegistryStatusModel statusModel = new Gson().fromJson(objects[0].toString(), RegistryStatusModel.class);
-						System.out.println(statusModel.getStatus());
+						//System.out.println(statusModel.getStatus());
 						messageLabel.setText(statusModel.getStatus());
 						if (statusModel.getStatus().equals("")) {
 							switchToLogin();

@@ -2,7 +2,10 @@ package com.shashwat.login;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,9 +29,12 @@ public class LoginPage extends JFrame {
 	public LoginPage(Boolean showRegister) {
 		this.showRegister = showRegister;
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		super.setIconImage(new ImageIcon("resources/icon.png").getImage());
+		super.setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
 		super.setSize(800,600);
-		super.setLocation(580,200);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int centerX = (screenSize.width - super.getWidth())/2;
+		int centerY = (screenSize.height - super.getHeight())/2;
+		super.setLocation(centerX,centerY);
 		super.setResizable(false);
 		super.setUndecorated(true);
 		
@@ -45,7 +51,7 @@ public class LoginPage extends JFrame {
 		
 		logoLabel = new JLabel();
 		logoLabel.setOpaque(false);
-		logoLabel.setIcon(new ImageIcon("resources/icon.png"));
+		logoLabel.setIcon(new ImageIcon(getClass().getResource("/icon.png")));
 		logoLabel.setBounds(120,120,160,160);
 		
 		titleLabel = new JLabel("ChatOnGo");
@@ -70,7 +76,7 @@ public class LoginPage extends JFrame {
 		versionLabel.setBounds(120,395,160,10);
 		
 		closeButton = new JButton();
-		closeButton.setIcon(new ImageIcon("resources/exit.png"));
+		closeButton.setIcon(new ImageIcon(getClass().getResource("/exit.png")));
 		closeButton.setContentAreaFilled(false);
 		closeButton.setBorderPainted(false);
 		closeButton.setFocusable(false);

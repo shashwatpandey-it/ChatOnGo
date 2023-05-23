@@ -68,7 +68,7 @@ public class ChatTypeBox extends JPanel implements ActionListener{
 		sendButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		sendButton.setFocusable(false);
 		sendButton.setBorderPainted(false);
-		sendButton.setIcon(new ImageIcon("resources/send.png"));
+		sendButton.setIcon(new ImageIcon(getClass().getResource("/send.png")));
 		sendButton.addActionListener(this);
 		
 		

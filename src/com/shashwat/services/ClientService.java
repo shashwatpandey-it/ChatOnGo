@@ -24,7 +24,7 @@ public class ClientService {
 	private OkHttpClient okHttpClient;
 	private Dispatcher dispatcher;
 	private final int PORT_NUMBER = 9999;
-	private final String IP = "localhost";
+	private final String IP = "chatongoserver.hopto.org";
 	private List<UserAccountModel> users = new ArrayList<>();
 	private int userId;
 	
@@ -75,7 +75,7 @@ public class ClientService {
 				@Override
 				public void call(Object... args) { 
 					if(args.length > 0) {
-						System.out.println(args[0]);
+						//System.out.println(args[0]);
 						for(Object object : args) {
 							UserAccountModel userAccount = new Gson().fromJson(object.toString(), UserAccountModel.class);
 							if(userAccount.getUserId() != userId) {

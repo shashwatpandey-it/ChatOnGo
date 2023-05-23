@@ -58,7 +58,7 @@ public class LeftPanel extends JPanel {
 	private void init() {
 		ClientService.getClientService().getClient().emit("listUsers", userId);				//demanding for list of users
 		
-		chatButton = new LPButton(new ImageIcon("resources/chat.png"), new ImageIcon("resources/chat_selected.png"));
+		chatButton = new LPButton(new ImageIcon(getClass().getResource("/chat.png")), new ImageIcon(getClass().getResource("/chat_selected.png")));
 		chatButton.setSelected(true);
 		chatButton.addActionListener(event -> {	chatButton.setSelected(true);
 												groupButton.setSelected(false);
@@ -66,7 +66,7 @@ public class LeftPanel extends JPanel {
 												showChatList();
 		});
 		
-		groupButton = new LPButton(new ImageIcon("resources/group.png"), new ImageIcon("resources/group_selected.png"));
+		groupButton = new LPButton(new ImageIcon(getClass().getResource("/group.png")), new ImageIcon(getClass().getResource("/group_selected.png")));
 		groupButton.setSelected(false);
 		groupButton.addActionListener(event -> {	chatButton.setSelected(false);
 													groupButton.setSelected(true);
@@ -74,7 +74,7 @@ public class LeftPanel extends JPanel {
 													showGroupList();
 		});
 		
-		boxButton = new LPButton(new ImageIcon("resources/box.png"), new ImageIcon("resources/box_selected.png"));
+		boxButton = new LPButton(new ImageIcon(getClass().getResource("/box.png")), new ImageIcon(getClass().getResource("/box_selected.png")));
 		boxButton.setSelected(false);
 		boxButton.addActionListener(event -> {	chatButton.setSelected(false);
 												groupButton.setSelected(false);

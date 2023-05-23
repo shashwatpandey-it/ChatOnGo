@@ -39,7 +39,7 @@ public class ContactCard extends JPanel implements MouseListener{
 		super.setBackground(new Color(235,235,235));
 		
 		avatarLabel = new JLabel();
-		avatarLabel.setIcon(new ImageIcon("resources/user.png"));
+		avatarLabel.setIcon(new ImageIcon(getClass().getResource("/user.png")));
 		
 		nameLabel = new JLabel();
 		nameLabel.setFont(new Font("Veranda", Font.PLAIN, 18));

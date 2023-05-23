@@ -65,7 +65,7 @@ public class ChatService {
 	}
 
 	private void send(SendMessageModel message) {
-		System.out.println(new Gson().toJson(message, SendMessageModel.class));
+		//System.out.println(new Gson().toJson(message, SendMessageModel.class));
 		ClientService.getClientService().getClient().emit("sendToUser", message.toJsonObject(), new Ack() {
 			
 			@Override

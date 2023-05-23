@@ -166,9 +166,9 @@ public class LoginPanelRight extends JPanel{
 						
 						if (objects.length >0) {
 							LoginStatusModel statusModel = new Gson().fromJson(objects[0].toString(), LoginStatusModel.class);
-							System.out.println(objects[0].toString());
-							System.out.println(statusModel.getMessage());
-							System.out.println(statusModel.getUserId());
+							//System.out.println(objects[0].toString());
+							//System.out.println(statusModel.getMessage());
+							//System.out.println(statusModel.getUserId());
 							
 							if(statusModel.isStatus()) {
 								ClientService.getClientService().setUserId(statusModel.getUserId());

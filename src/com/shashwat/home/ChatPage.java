@@ -2,6 +2,8 @@ package com.shashwat.home;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.time.LocalTime;
@@ -30,9 +32,12 @@ public class ChatPage extends JFrame{
 		this.loginTime = loginTime;
 		super.setTitle("ChatOnGo");
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		super.setIconImage(new ImageIcon("resources/icon.png").getImage());
-		super.setLocation(200,150);
+		super.setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
 		super.setSize(1400,700);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int centerX = (screenSize.width - super.getWidth())/2;
+		int centerY = (screenSize.height - super.getHeight())/2;
+		super.setLocation(centerX,centerY);
 		super.getContentPane().setBackground(Color.white);
 		
 		this.init();
